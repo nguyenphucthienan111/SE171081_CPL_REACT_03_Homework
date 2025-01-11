@@ -80,7 +80,6 @@ button:hover {
   color: white;
 }
 
-/* History Button */
 .history-btn {
   width: 100%;
   padding: 10px;
@@ -105,7 +104,6 @@ button:hover {
   font-size: 18px;
 }
 
-/* Modal Styles */
 .history-modal {
   display: none;
   position: fixed;

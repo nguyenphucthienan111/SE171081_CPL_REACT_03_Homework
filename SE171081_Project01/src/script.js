@@ -161,27 +161,24 @@ class Calculator {
         return;
     }
 
-    // Tạo object calculation với kết quả đã được tính
     const calculation = {
       expression: `${prev} ${this.operation} ${current} = ${computation}`,
       result: computation,
       timestamp: new Date().toLocaleString(),
     };
 
-    // Thêm vào history
     const history = this.loadHistory();
     history.unshift(calculation);
     if (history.length > 10) {
       history.pop();
     }
 
-    // Lưu vào localStorage
     localStorage.setItem("calculatorHistory", JSON.stringify(history));
 
     this.currentOperand = computation.toString();
     this.operation = undefined;
     this.previousOperand = "";
-    this.shouldResetScreen = true; // Bật flag để reset màn hình ở lần nhập số tiếp theo
+    this.shouldResetScreen = true;
     this.updateDisplay();
     this.updateHistoryDisplay();
   }
